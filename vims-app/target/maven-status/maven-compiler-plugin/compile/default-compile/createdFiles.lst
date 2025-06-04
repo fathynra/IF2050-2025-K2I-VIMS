@@ -1,0 +1,5 @@
+com\vims\model\InvestorInvestment.class
+com\vims\model\Transaction.class
+com\vims\model\ProductRequest.class
+com\vims\model\Investor.class
+com\vims\model\InvestmentProduct.class
