@@ -122,11 +122,6 @@ public class MainLayoutController {
 
     @FXML
     public void handleShowTransactionView() {
-
-        showPlaceholderView("Halaman Riwayat Transaksi akan segera tersedia.");
-        System.out.println("handleShowTransactionView dipanggil - UI belum dimuat.");
-        
-
         loadViewWithControllerSetup("/ui/TransactionHistoryView.fxml", controller -> {
         });
 
