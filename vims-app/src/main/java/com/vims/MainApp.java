@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class MainApp extends Application {
 
+
     private static Stage globalPrimaryStage;
 
     @Override
@@ -17,22 +18,26 @@ public class MainApp extends Application {
         MainApp.globalPrimaryStage = stage;
         stage.setTitle("VIMS - Login");
         showLoginPage(stage);
+
     }
 
     public static void showLoginPage(Stage stageToUse) {
         try {
+
             FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/ui/LoginPage.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root, 500, 450);
             
             stageToUse.setScene(scene);
             stageToUse.setTitle("VIMS - Login");
+
             if (!stageToUse.isShowing()) {
                 stageToUse.show();
             }
         } catch (IOException e) {
             System.err.println("Gagal memuat LoginPage.fxml:");
             e.printStackTrace();
+
         }
     }
 
@@ -44,6 +49,7 @@ public class MainApp extends Application {
             
             stageToUse.setTitle("VIMS - Vunguard Investment Management System");
             stageToUse.setScene(scene);
+
         } catch (IOException e) {
             System.err.println("Gagal memuat MainLayout.fxml:");
             e.printStackTrace();
@@ -56,5 +62,5 @@ public class MainApp extends Application {
 
     public static void main(String[] args) {
         launch(args);
-    }
+
 }
