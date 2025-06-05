@@ -88,7 +88,6 @@ public class Investor {
                "accountId=" + accountId +
                ", name='" + name + '\'' +
                ", email='" + email + '\'' +
-               // Jangan sertakan password di toString() untuk keamanan
                ", status='" + status + '\'' +
                ", role='" + role + '\'' +
                ", balance=" + balance +
