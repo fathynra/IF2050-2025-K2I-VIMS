@@ -1,8 +1,12 @@
 package com.vims.ui.controllers;
 
+import java.io.IOException;
+import java.util.function.Consumer;
+
 import com.vims.MainApp;
 import com.vims.controller.LoginController;
 import com.vims.model.Investor;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,9 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.function.Consumer;
 
 public class MainLayoutController {
 
@@ -121,9 +122,14 @@ public class MainLayoutController {
 
     @FXML
     public void handleShowTransactionView() {
-        // dimasukin ke implementasi ke yang manager?
+
+        showPlaceholderView("Halaman Riwayat Transaksi akan segera tersedia.");
+        System.out.println("handleShowTransactionView dipanggil - UI belum dimuat.");
+        
+
         loadViewWithControllerSetup("/ui/TransactionHistoryView.fxml", controller -> {
         });
+
     }
 
     @FXML
