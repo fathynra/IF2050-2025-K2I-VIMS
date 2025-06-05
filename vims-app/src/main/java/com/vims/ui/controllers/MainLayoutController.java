@@ -134,7 +134,18 @@ public class MainLayoutController {
     
     @FXML
     public void handleShowAddProductView() {
-        loadViewWithControllerSetup("/ui/AddProductView.fxml", controller -> {});
+
+        loadViewWithControllerSetup("/ui/AddProductView.fxml", controller -> {
+            // Setup controller jika perlu
+        });
+    }
+    
+    private void showPlaceholderView(String message) {
+        Label placeholderLabel = new Label(message);
+        placeholderLabel.setStyle("-fx-font-size: 16px; -fx-padding: 20;");
+        if (contentPane != null) {
+            contentPane.setCenter(placeholderLabel);
+        }
     }
 
     public void loadViewWithControllerSetup(String fxmlPath, Consumer<Object> controllerSetupLogic) {
