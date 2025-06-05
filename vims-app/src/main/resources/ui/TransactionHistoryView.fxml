@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.vims.ui.controllers.TransactionHistoryController"
+      spacing="15.0" style="-fx-padding: 20;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Riwayat Transaksi Anda" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <ScrollPane fx:id="scrollPane" fitToWidth="true" prefHeight="450.0">
+        <content>
+            <VBox fx:id="transactionContainerPane" spacing="10.0" style="-fx-padding: 5;">
+                </VBox>
+        </content>
+    </ScrollPane>
+
+    <Label fx:id="infoLabel" text=""/>
+</VBox>
