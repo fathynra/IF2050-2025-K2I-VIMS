@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.vims.ui.controllers.SellSummaryController"
+      spacing="15.0" style="-fx-padding: 25; -fx-border-color: lightgray; -fx-border-width: 1; -fx-background-color: white;"
+      alignment="TOP_LEFT">
+    <Label text="Ringkasan Penjualan" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="8">
+        <Label text="Nama Produk:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="productNameLabel" text="[Nama Produk (Tipe)]" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Tanggal Penjualan:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="sellDateLabel" text="[Tanggal Sekarang]" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Unit Dijual:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="unitsLabel" text="[Jumlah Unit]" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Penarikan Dana ke:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="withdrawalMethodLabel" text="[Metode Penarikan]" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Total Estimasi Pendapatan:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <Label fx:id="totalRevenueLabel" text="[Total Pendapatan]" GridPane.rowIndex="4" GridPane.columnIndex="1" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+    </GridPane>
+
+    <CheckBox fx:id="termsCheckbox" text="Saya mengerti dan menyetujui transaksi penjualan ini" style="-fx-padding: 10 0 0 0;"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button text="Batal" onAction="#handleCancelSummaryAction"/>
+        <Button fx:id="finalConfirmSellButton" text="Konfirmasi dan Jual" onAction="#handleFinalConfirmSellAction" 
+                style="-fx-background-color: #D8000C; -fx-text-fill: white;" disable="true"/>
+    </HBox>
+</VBox>
