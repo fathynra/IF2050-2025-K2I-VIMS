@@ -12,10 +12,6 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Mock/Stub sederhana untuk InvestorDao khusus untuk testing LoginController.
- * Ini menggantikan InvestorDao asli agar tidak perlu koneksi database saat unit test.
- */
 class MockInvestorDaoForLogin extends InvestorDao {
     private Map<String, Investor> usersDatabase = new HashMap<>();
 
@@ -32,8 +28,6 @@ class MockInvestorDaoForLogin extends InvestorDao {
         return usersDatabase.get(email.toLowerCase());
     }
 
-    // Override metode DAO lain yang mungkin secara tidak sengaja dipanggil agar tidak error
-    // atau tidak melakukan apa-apa, karena fokus kita adalah getInvestorByEmail untuk login.
     @Override
     public boolean updateInvestor(Investor investor) {
         // Untuk tes login, ini mungkin tidak dipanggil. Jika dipanggil, kita bisa mock hasilnya.
@@ -43,7 +37,6 @@ class MockInvestorDaoForLogin extends InvestorDao {
         }
         return false;
     }
-    // Anda bisa override metode lain jika diperlukan oleh LoginController
 }
 
 public class LoginControllerTest {
@@ -53,7 +46,6 @@ public class LoginControllerTest {
 
     @BeforeEach
     void setUp() {
-        // Setiap tes akan menggunakan instance baru dari mock DAO dan LoginController
         mockInvestorDao = new MockInvestorDaoForLogin();
         loginController = new LoginController(mockInvestorDao); // Menggunakan constructor injection
 
