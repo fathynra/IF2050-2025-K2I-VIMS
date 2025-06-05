@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vims.ui.controllers.MainLayoutController"
+            prefHeight="600.0" prefWidth="800.0">
+    <top>
+        <Label text="VIMS" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 10;" alignment="CENTER"/>
+    </top>
+    <left>
+        <VBox fx:id="sidebarContainer" spacing="0" style="-fx-padding: 10; -fx-background-color: #e0e0e0;" prefWidth="180">
+            <VBox fx:id="navigationButtonsPane" spacing="10" VBox.vgrow="NEVER">
+                <children>
+                    <Button text="Produk" onAction="#handleShowProductView" prefWidth="Infinity"/>
+                    <Button text="Permintaan" onAction="#handleShowRequestView" prefWidth="Infinity"/>
+                    <Button text="Transaksi" onAction="#handleShowTransactionView" prefWidth="Infinity"/>
+                    </children>
+            </VBox>
+
+            <VBox VBox.vgrow="ALWAYS" /> 
+
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogoutAction" prefWidth="Infinity"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;">
+                <VBox.margin>
+                    <Insets top="10.0"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </left>
+    <center>
+        <BorderPane fx:id="contentPane">
+            <center>
+                <Label fx:id="welcomeMessageLabel" text="Selamat datang di VIMS! Pilih menu dari sidebar." 
+                       style="-fx-font-size: 16px; -fx-padding: 20;"/>
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>
