@@ -129,7 +129,10 @@ public class MainLayoutController {
 
     @FXML
     public void handleShowManageInvestorsView() {
-        loadViewWithControllerSetup("/ui/ViewInvestorListPage.fxml", controller -> {});
+
+        loadViewWithControllerSetup("/ui/ViewInvestorListPage.fxml", controller -> {
+        });
+       
     }
     
     @FXML
