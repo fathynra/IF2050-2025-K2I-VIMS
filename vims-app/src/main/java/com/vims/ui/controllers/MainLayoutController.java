@@ -46,9 +46,7 @@ public class MainLayoutController {
         boolean isAdmin = false;
         boolean isManager = false;
 
-        navigationButtonsPane.getChildren().removeIf(node -> node.getId() != null &&
-                                                     (node.getId().equals("manageInvestorsButton") ||
-                                                      node.getId().equals("addProductButton")));
+        navigationButtonsPane.getChildren().removeIf(node -> node.getId() != null &&(node.getId().equals("manageInvestorsButton") ||node.getId().equals("addProductButton")));
         
         if (currentUser != null) {
             if ("ADMIN".equalsIgnoreCase(currentUser.getRole())) {
