@@ -1,8 +1,12 @@
 package com.vims.ui.controllers;
 
+import java.io.IOException;
+import java.util.function.Consumer;
+
 import com.vims.MainApp;
 import com.vims.controller.LoginController;
 import com.vims.model.Investor;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,9 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.function.Consumer;
 
 public class MainLayoutController {
 
@@ -33,27 +34,47 @@ public class MainLayoutController {
     public void initialize() {
         Investor currentUser = LoginController.getCurrentLoggedInUser();
         if (currentUser != null) {
-            welcomeMessageLabel.setText("Selamat datang, " + currentUser.getName() + "! Peran Anda: " + currentUser.getRole());
+            welcomeMessageLabel.setText("Selamat datang, " + currentUser.getName() + "! Peran: " + currentUser.getRole());
         } else {
             welcomeMessageLabel.setText("Selamat datang di VIMS!");
         }
         setupRoleBasedUI();
-        showPlaceholderView("Silakan pilih menu.");
+        handleShowProductView(); 
     }
 
     private void setupRoleBasedUI() {
         Investor currentUser = LoginController.getCurrentLoggedInUser();
         boolean isAdmin = false;
         boolean isManager = false;
+        boolean isInvestor = false;
 
-        navigationButtonsPane.getChildren().removeIf(node -> node.getId() != null &&(node.getId().equals("manageInvestorsButton") ||node.getId().equals("addProductButton")));
-        
+        navigationButtonsPane.getChildren().clear(); 
+
+        Button productBtn = new Button("Produk");
+        productBtn.setPrefWidth(Double.MAX_VALUE);
+        productBtn.setOnAction(event -> handleShowProductView());
+        navigationButtonsPane.getChildren().add(productBtn);
+
+        Button requestBtn = new Button("Permintaan");
+        requestBtn.setPrefWidth(Double.MAX_VALUE);
+        requestBtn.setOnAction(event -> handleShowRequestView());
+        navigationButtonsPane.getChildren().add(requestBtn);
+
+        Button transactionBtn = new Button("Transaksi");
+        transactionBtn.setPrefWidth(Double.MAX_VALUE);
+        transactionBtn.setOnAction(event -> handleShowTransactionView());
+        navigationButtonsPane.getChildren().add(transactionBtn);
+
+
         if (currentUser != null) {
             if ("ADMIN".equalsIgnoreCase(currentUser.getRole())) {
                 isAdmin = true;
             }
             if ("MANAGER".equalsIgnoreCase(currentUser.getRole())) {
                 isManager = true;
+            }
+            if ("INVESTOR".equalsIgnoreCase(currentUser.getRole())) {
+                isInvestor = true;
             }
         }
         
@@ -83,44 +104,32 @@ public class MainLayoutController {
 
     @FXML
     public void handleShowProductView() {
-
-        showPlaceholderView("Halaman Produk akan segera tersedia.");
-        System.out.println("handleShowProductView dipanggil - UI belum dimuat.");
-        /*
         loadViewWithControllerSetup("/ui/ProductListView.fxml", controller -> {
             if (controller instanceof ProductListController) {
                 ((ProductListController) controller).setMainLayoutController(this);
             }
         });
-        */
     }
 
     @FXML
     public void handleShowRequestView() {
-        showPlaceholderView("Halaman Permintaan Produk akan segera tersedia.");
-        System.out.println("handleShowRequestView dipanggil - UI belum dimuat.");
-        /*
         loadViewWithControllerSetup("/ui/ProductRequestHistoryView.fxml", controller -> {
             if (controller instanceof ProductRequestHistoryController) {
                 ((ProductRequestHistoryController) controller).setMainLayoutController(this);
             }
         });
-        */
     }
 
     @FXML
     public void handleShowTransactionView() {
-        showPlaceholderView("Halaman Riwayat Transaksi akan segera tersedia.");
-        System.out.println("handleShowTransactionView dipanggil - UI belum dimuat.");
-        /*
         loadViewWithControllerSetup("/ui/TransactionHistoryView.fxml", controller -> {
-            // Setup controller jika perlu
         });
-        */
+
     }
 
     @FXML
     public void handleShowManageInvestorsView() {
+
         loadViewWithControllerSetup("/ui/ViewInvestorListPage.fxml", controller -> {
         });
        
@@ -128,13 +137,10 @@ public class MainLayoutController {
     
     @FXML
     public void handleShowAddProductView() {
-        showPlaceholderView("Halaman Tambah Produk akan segera tersedia (Fitur Manajer).");
-        System.out.println("handleShowAddProductView dipanggil - UI belum dimuat.");
-        /*
+
         loadViewWithControllerSetup("/ui/AddProductView.fxml", controller -> {
             // Setup controller jika perlu
         });
-        */
     }
     
     private void showPlaceholderView(String message) {
@@ -158,7 +164,7 @@ public class MainLayoutController {
             contentPane.setCenter(viewRoot);
         } catch (IOException e) {
             System.err.println("Gagal memuat view: " + fxmlPath + " - " + e.getMessage());
-            Label errorLabel = new Label("Gagal memuat halaman: " + fxmlPath.substring(fxmlPath.lastIndexOf('/') + 1) + "\nPastikan file FXML ada dan controller terhubung dengan benar.");
+            Label errorLabel = new Label("Gagal memuat halaman: " + fxmlPath.substring(fxmlPath.lastIndexOf('/') + 1));
             errorLabel.setWrapText(true);
             contentPane.setCenter(errorLabel);
         }

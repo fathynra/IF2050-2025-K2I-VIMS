@@ -11,5 +11,5 @@ module com.vims.vimsapp {
     exports com.vims.dao;
     exports com.vims.controller;
     exports com.vims.util;
-    //exports com.vims.ui.controllers;
+    exports com.vims.ui.controllers;
 }
