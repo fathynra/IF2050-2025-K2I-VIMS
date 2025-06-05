@@ -10,6 +10,7 @@ C:\drpl\IF2050-2025-K2I-VIMS\vims-app\src\main\java\com\vims\model\Transaction.j
 C:\drpl\IF2050-2025-K2I-VIMS\vims-app\src\main\java\com\vims\model\InvestmentProduct.java
 C:\drpl\IF2050-2025-K2I-VIMS\vims-app\src\main\java\com\vims\model\InvestorInvestment.java
 C:\drpl\IF2050-2025-K2I-VIMS\vims-app\src\main\java\com\vims\ui\controllers\MainLayoutController.java
+C:\drpl\IF2050-2025-K2I-VIMS\vims-app\src\main\java\com\vims\ui\controllers\ViewInvestorListPageController.java
 C:\drpl\IF2050-2025-K2I-VIMS\vims-app\src\main\java\com\vims\controller\RequestController.java
 C:\drpl\IF2050-2025-K2I-VIMS\vims-app\src\main\java\com\vims\dao\InvestorDao.java
 C:\drpl\IF2050-2025-K2I-VIMS\vims-app\src\main\java\com\vims\dao\TransactionDao.java

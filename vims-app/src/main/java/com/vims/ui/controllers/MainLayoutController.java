@@ -121,13 +121,9 @@ public class MainLayoutController {
 
     @FXML
     public void handleShowManageInvestorsView() {
-        showPlaceholderView("Halaman Manajemen Investor akan segera tersedia (Fitur Admin).");
-        System.out.println("handleShowManageInvestorsView dipanggil - UI belum dimuat.");
-        /*
         loadViewWithControllerSetup("/ui/ViewInvestorListPage.fxml", controller -> {
-            // Setup controller jika perlu
         });
-        */
+       
     }
     
     @FXML
