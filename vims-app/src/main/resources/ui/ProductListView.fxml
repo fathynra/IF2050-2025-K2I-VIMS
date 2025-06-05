@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vims.ui.controllers.ProductListController"
+            prefHeight="500.0" prefWidth="700.0">
+
+    <top>
+        <VBox spacing="10.0" style="-fx-padding: 10;">
+            <children>
+                <Label text="Daftar Produk Investasi VIMS" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <children>
+                        <Label text="Cari Produk:"/>
+                        <TextField fx:id="searchField" promptText="Masukkan nama produk..." HBox.hgrow="ALWAYS"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="5.0" top="5.0"/>
+            </padding>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" style="-fx-padding: 0 10 0 10;" BorderPane.alignment="CENTER">
+            <content>
+                <TilePane fx:id="productContainerPane" hgap="15.0" vgap="15.0" style="-fx-background-color: #f4f4f4; -fx-padding: 10;">
+                    </TilePane>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 15;">
+            <Label text="Didn't find what you're looking for?"/>
+            <Button text="Add Request" onAction="#handleAddRequestButton" 
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

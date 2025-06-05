@@ -1,4 +1,4 @@
-package com.vims; 
+package com.vims;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,64 +10,57 @@ import java.io.IOException;
 
 public class MainApp extends Application {
 
-    private static Stage globalPrimaryStage; 
+
+    private static Stage globalPrimaryStage;
 
     @Override
     public void start(Stage stage) {
-        MainApp.globalPrimaryStage = stage; 
-        stage.setTitle("VIMS - Login"); 
-        showLoginPage(stage); 
+        MainApp.globalPrimaryStage = stage;
+        stage.setTitle("VIMS - Login");
+        showLoginPage(stage);
+
     }
 
-    // Metode untuk menampilkan halaman login
     public static void showLoginPage(Stage stageToUse) {
         try {
-            
-            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/ui/LoginPage.fxml")); 
+
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/ui/LoginPage.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root, 500, 450);
-
+            
             stageToUse.setScene(scene);
-            stageToUse.setTitle("VIMS - Login"); 
+            stageToUse.setTitle("VIMS - Login");
+
             if (!stageToUse.isShowing()) {
                 stageToUse.show();
             }
         } catch (IOException e) {
             System.err.println("Gagal memuat LoginPage.fxml:");
             e.printStackTrace();
-            
+
         }
     }
 
-    
-    public static void showMainLayout(Stage currentStageToClose) {
-        Stage stageForMainLayout = globalPrimaryStage; 
-
-        
-        if (currentStageToClose != null && currentStageToClose != globalPrimaryStage) {
-            currentStageToClose.close();
-        }
-
+    public static void showMainLayout(Stage stageToUse) {
         try {
             FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/ui/MainLayout.fxml"));
             Parent root = loader.load();
-            // Sesuaikan ukuran jendela untuk layout utama
-            Scene scene = new Scene(root, 900, 700); 
+            Scene scene = new Scene(root, 950, 700); 
+            
+            stageToUse.setTitle("VIMS - Vunguard Investment Management System");
+            stageToUse.setScene(scene);
 
-            stageForMainLayout.setTitle("VIMS - Vunguard Investment Management System");
-            stageForMainLayout.setScene(scene);
         } catch (IOException e) {
             System.err.println("Gagal memuat MainLayout.fxml:");
             e.printStackTrace();
         }
     }
-
-    // Metode untuk mendapatkan primaryStage, mungkin berguna nanti
+    
     public static Stage getPrimaryStage() {
         return globalPrimaryStage;
     }
 
     public static void main(String[] args) {
-        launch(args); 
-    }
+        launch(args);
+
 }
