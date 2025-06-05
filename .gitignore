@@ -1,21 +1,37 @@
-.gradle
-**/build/
-!src/**/build/
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# Log files (jika ada)
+*.log
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
+# IDE files (Contoh untuk IntelliJ, Eclipse, VS Code)
+.idea/
+*.iml
+*.ipr
+*.iws
 
-# Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
-# Cache of project
-.gradletasknamecache
-
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
 .classpath
+.project
+.settings/
+
+.vscode/
+
+# File sistem operasi
+.DS_Store
+Thumbs.db
