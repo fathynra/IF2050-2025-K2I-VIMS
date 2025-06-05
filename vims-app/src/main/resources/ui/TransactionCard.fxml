@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="transactionCard" spacing="5.0"
+      style="-fx-padding: 10; -fx-border-color: #d3d3d3; -fx-border-width: 1; -fx-background-color: white;"
+      prefWidth="550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.vims.ui.controllers.TransactionCardController">
+    <children>
+        <HBox spacing="10">
+            <Label text="Produk:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="productNameLabel" text="[Nama Produk (Tipe Produk)]"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Jenis Transaksi:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="transactionTypeLabel" text="[Beli/Jual]"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Tanggal dan Waktu:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="dateTimeLabel" text="[Tanggal Waktu]"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Jumlah Unit:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="unitsLabel" text="[Jumlah Unit]"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="ID Investor:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="investorIdLabel" text="[ID Investor]"/>
+        </HBox>
+        </children>
+</VBox>
