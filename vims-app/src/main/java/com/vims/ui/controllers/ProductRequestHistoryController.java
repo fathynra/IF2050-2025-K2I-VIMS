@@ -76,14 +76,22 @@ public class ProductRequestHistoryController {
             investorIdColumn.setVisible(false); 
             actionColumn.setVisible(false); 
             loadInvestorRequestHistory();
-        } else if ("MANAGER".equalsIgnoreCase(userRole) || "ADMIN".equalsIgnoreCase(userRole)) {
+        } else if ("MANAGER".equalsIgnoreCase(userRole)) {
             pageTitleLabel.setText("Daftar Permintaan Produk dari Investor");
             addNewRequestButton.setVisible(false); 
             investorIdColumn.setVisible(true);  
             actionColumn.setVisible(true);   
             setupManagerActionColumn();      
             loadAllPendingRequestsForManager(); 
-        } else {
+        } 
+        else if ("ADMIN".equalsIgnoreCase(userRole)) {
+            pageTitleLabel.setText("Daftar Permintaan Produk dari Investor");
+            addNewRequestButton.setVisible(false); 
+            investorIdColumn.setVisible(true);  
+            actionColumn.setVisible(false);   
+            loadAllPendingRequestsForManager(); 
+        }
+        else {
             infoLabel.setText("Peran pengguna tidak dikenali.");
             addNewRequestButton.setVisible(false);
             investorIdColumn.setVisible(false);
