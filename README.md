@@ -45,7 +45,7 @@ VIMS adalah sistem manajemen aset investasi berbasis web yang dikembangkan untuk
 ### 4. Jalankan Aplikasi di VS Code
    - Buka file utama aplikasi:
      - `vims-app/src/main/java/com/vims/MainApp.java`
-   - Jalankan fungsi utama dengan tekan run.
+   - Jalankan fungsi utama dengan tekan run di atas fungsi berikut.
      - ![Screenshot 2025-06-07 124651](https://github.com/user-attachments/assets/2d9912ba-5af8-42c9-ad1b-d28ffcec11a6)
 
 ## 🧩Daftar Modul yang Diimplementasi 
@@ -53,21 +53,21 @@ VIMS adalah sistem manajemen aset investasi berbasis web yang dikembangkan untuk
 Berikut adalah daftar modul utama dalam sistem VIMS beserta pembagian tugas.
 
 
-### 📌 Modul: Model, Controller, DAO, dan Login
+### 📖 Modul: Model, Controller, DAO, dan Login
 - **Deskripsi:**  
   Membangun struktur logika aplikasi (Model-Controller), koneksi database (DAO), serta autentikasi login awal pengguna.
 - **Dikerjakan oleh:**  
   Bryan Adi Priasmoro – 18223087
 
 
-### 📌 Modul: Product Interaction (lihat detail, beli, jual)
+### 📖 Modul: Product Interaction (lihat detail, beli, jual)
 - **Deskripsi:**  
   Menampilkan daftar produk investasi, detail produk, fitur pembelian dan penjualan produk.
 - **Dikerjakan oleh:**  
   Bryan Adi Priasmoro – 18223087
 
 
-### 📌 Modul: Transaksi (View & Riwayat)
+### 📖 Modul: Transaksi (View & Riwayat)
 - **Deskripsi:**  
   Menampilkan daftar transaksi pembelian dan penjualan yang dilakukan investor.
 - **Dikerjakan oleh:**  
@@ -75,25 +75,33 @@ Berikut adalah daftar modul utama dalam sistem VIMS beserta pembagian tugas.
   Farella Kamala Budianto – 18223046
 
 
-### 📌 Modul: Permintaan Produk (Manager – Add Produk)
+### 📖 Modul: Permintaan Produk (Manager – Add Produk)
 - **Deskripsi:**  
   Fitur manajer investasi untuk menambahkan produk investasi baru ke sistem.
 - **Dikerjakan oleh:**  
   Fathimah Nurhumaida Ramadhani – 18223052
 
 
-### 📌 Modul: Setup Database (SQL)
+### 📖 Modul: Setup Database (SQL)
 - **Deskripsi:**  
   Menyiapkan struktur database (`schema.sql`) dan data awal (`seeder.sql`).
 - **Dikerjakan oleh:**  
   Fathimah Nurhumaida Ramadhani – 18223052
 
 
-### 📌 Modul: Manajemen Investor (Admin)
+### 📖 Modul: Manajemen Investor (Admin)
 - **Deskripsi:**  
   Admin dapat melihat semua akun investor, melakukan aksi Ban/Unban.
 - **Dikerjakan oleh:**  
   Nurul Na’im Natifah – 18223106
+
+
+### 📘 Laporan
+- **Fathimah Nurhumaida Ramadhani** **- 18223052**: Bab 2 + 4.1
+- **Nurul Na’im Natifah** **- 18223106**: Bab 3 
+- **Vincentia Belinda Sumartoyo - 18223078**: Bab 4.2.1 - 4.2.3
+- **Farella Kamala Budianto - 18223046**: Bab 4.3 + 5
+- **Bryan Adi Priasmoro - 18223087**: Finalisasi laporan
 
 
 ## 📄 Daftar Tabel Basis Data yang Diimplementasi
@@ -105,8 +113,8 @@ Berikut adalah daftar modul utama dalam sistem VIMS beserta pembagian tugas.
 | `name`       | `varchar(255)`                    | Nama investor          |
 | `email`      | `varchar(255)`                    | Email pengguna         |
 | `password`   | `varchar(255)`                    | Password akun          |
-| `status`     | `enum('active','banned')`         | Status akun            |
-| `role`       | `enum('INVESTOR','MANAGER','ADMIN')` | Peran pengguna     |
+| `status`     | `varchar(20)`         | Status akun (`active`,`banned`)           |
+| `role`       | `varchar(20)` | Peran pengguna (`INVESTOR`,`MANAGER`,`ADMIN`)    |
 | `balance`    | `decimal(15,2)`                   | Saldo akun             |
 
 - ### investment_product
@@ -145,9 +153,3 @@ Berikut adalah daftar modul utama dalam sistem VIMS beserta pembagian tugas.
 | `account_id`     | `int` (FK ke `investor.account_id`)   | ID investor                                     |
 | `product_id`     | `int` (FK ke `investment_product.product_id`) | ID produk                                 |
 | `quantity_owned` | `int`                                | Jumlah unit produk yang dimiliki oleh investor |
-
-
-
-
-
-
