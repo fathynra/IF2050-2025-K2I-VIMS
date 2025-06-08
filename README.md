@@ -99,7 +99,7 @@ Berikut adalah daftar modul utama dalam sistem VIMS beserta pembagian tugas.
 ### 📘 Laporan
 - **Fathimah Nurhumaida Ramadhani** **- 18223052**: Bab 2 + 4.1
 - **Nurul Na’im Natifah** **- 18223106**: Bab 3 
-- **Vincentia Belinda Sumartoyo - 18223078**: Bab 4.2.1 - 4.2.3
+- **Vincentia Belinda Sumartoyo - 18223078**: Bab 4.2.1 - 4.2.11
 - **Farella Kamala Budianto - 18223046**: Bab 4.3 + 5
 - **Bryan Adi Priasmoro - 18223087**: Finalisasi laporan
 
