@@ -48,6 +48,11 @@ VIMS adalah sistem manajemen aset investasi berbasis web yang dikembangkan untuk
    - Jalankan fungsi utama dengan tekan run di atas fungsi berikut.
      - ![Screenshot 2025-06-07 124651](https://github.com/user-attachments/assets/2d9912ba-5af8-42c9-ad1b-d28ffcec11a6)
 
+### 5. Login ke VIMS dapat menggunakan akun yang ada di database VIMS, tepatnya di tabel INVESTOR. Berikut 3 akun yang dapat langsung digunakan : 
+   - Email : admin@vims.com ; password : adminpassword
+   - Email : manager@vims.com ; password : managerpassword
+   - Email : juankoch@example.com ; password : investorpassword
+
 ## 🧩Daftar Modul yang Diimplementasi 
 
 Berikut adalah daftar modul utama dalam sistem VIMS beserta pembagian tugas.
